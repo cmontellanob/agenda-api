@@ -10,7 +10,7 @@ Route::get('/user', function (Request $request) {
     return $request->user();
 })->middleware('auth:sanctum');
 
-Route::apiResource('personas', PersonaController::class)
+Route::apiResource('personas', PersonaController::class);
     ->middleware(JwtMiddleware::class);
 
 Route::post('login', [LoginController::class, 'login']);   
